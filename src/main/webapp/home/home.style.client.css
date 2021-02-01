@@ -1,3 +1,10 @@
+.wbdv-sticky-nav-bar {
+    background-color: dodgerblue;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+
 .wbdv-padding-10px {
     padding: 10px;
 }
