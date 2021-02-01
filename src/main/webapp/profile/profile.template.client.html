@@ -6,11 +6,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../styles.css" rel="stylesheet"/>
     <link href="./profile.style.client.css" rel="stylesheet"/>
+
 </head>
 <body>
-    <div class="container">
 
+    <div class="container">
         <h1>Profile</h1>
+
         <div class="alert alert-success" role="alert">
             Profile successfully saved!
         </div>
@@ -22,7 +24,7 @@
             <div class="col-sm-10">
                 <input type="text"
                        placeholder="dchang"
-                       title="This is your username to login."
+                       title="This is your username to login. This cannot be modified."
                        class="form-control"
                        id="username"
                         readonly>
@@ -60,7 +62,7 @@
                 <select id="role" class="form-control">
                     <option>Faculty</option>
                     <option>Student</option>
-                    <option>Staff</option>
+                    <option>Admin</option>
                 </select>
             </div>
         </div>
@@ -83,7 +85,7 @@
             </label>
 
             <div class="col-sm-10">
-                <a class="btn btn-success btn-block" >
+                <a class="btn btn-success btn-block" href="#">
                     Update
                 </a>
 

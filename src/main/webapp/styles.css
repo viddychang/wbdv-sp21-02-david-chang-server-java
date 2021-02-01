@@ -1,20 +1,25 @@
 .wbdv-sticky-nav-bar {
-background-color: #007bff;
-padding: 10px;
-position: fixed;
-width: 100%;
-z-index: 1;
-
-}
-
-.container {
-   padding:60px;
+    background-color: dodgerblue;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
 }
 
 .color-red {
-color:red;
+    color:#f01c1c;
+}
+
+.color-white {
+    color:white;
 }
 
 .color-blue{
-color:blue;
+    color:blue;
 }
+
+
+
+.background-lightgrey{
+    background-color:lightgrey;
+}
+
