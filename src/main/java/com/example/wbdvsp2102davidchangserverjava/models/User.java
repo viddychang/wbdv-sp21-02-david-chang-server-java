@@ -5,6 +5,13 @@ public class User {
 	private String username;
 	private String firstName;
 	private String lastName;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	private String role;
 	public long getId() {
 		return id;
 	}
@@ -32,11 +39,12 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public User(long id, String username, String firstName, String lastName) {
+	public User(long id, String username, String firstName, String lastName, String role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.role = role;
 	}
 }
