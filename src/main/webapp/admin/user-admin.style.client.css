@@ -1,0 +1,8 @@
+.wbdv-role {
+    text-transform: lowercase;
+
+}
+
+.wbdv-role::first-letter {
+    text-transform: capitalize;
+}

@@ -15,18 +15,12 @@
 
     function createUser() {
         var newUser = {
-            username: $usernameFld.val(),
+            userName: $usernameFld.val(),
             password: $passwordFld.val(),
-            firstname: $firstNameFld.val(),
-            lastname: $lastNameFld.val(),
+            firstName: $firstNameFld.val(),
+            lastName: $lastNameFld.val(),
             role: $roleFld.val()
         }
-
-        $usernameFld.val('')
-        $passwordFld.val('')
-        $firstNameFld.val('')
-        $lastNameFld.val('')
-        $roleFld.val('')
 
         userService
             .createUser(newUser)
@@ -34,6 +28,8 @@
                 users.push(actualUser)
                 renderUsers(users)
             })
+
+        clearInputs()
     }
 
     function renderUsers(users) {
@@ -44,10 +40,10 @@
             $tbody
                 .append(`
                     <tr class= "wbdv-user">
-                        <td class="wbdv-username">${user.username}</td>
+                        <td class="wbdv-username">${user.userName}</td>
                         <td>&nbsp;</td>
-                        <td class="wbdv-first-name">${user.firstname}</td>
-                        <td class="wbdv-last-name">${user.lastname}</td>
+                        <td class="wbdv-first-name">${user.firstName}</td>
+                        <td class="wbdv-last-name">${user.lastName}</td>
                         <td class="wbdv-role">${user.role}</td>
                         <td class="wbdv-actions">
                     <span class="pull-right">
@@ -79,11 +75,47 @@
             })
     }
 
+    var selectedUser = null
+    function selectUser(event) {
+        var id = $(event.target).attr('id')
+        selectedUser = users.find(user => user._id === id)
+        $usernameFld.val(selectedUser.userName)
+        $passwordFld.val(selectedUser.password)
+        $firstNameFld.val(selectedUser.firstName)
+        $lastNameFld.val(selectedUser.lastName)
+        $roleFld.val(selectedUser.role)
+    }
+
+    function updateUser() {
+        selectedUser.userName = $usernameFld.val()
+        selectedUser.password = $passwordFld.val()
+        selectedUser.firstName = $firstNameFld.val()
+        selectedUser.lastName = $lastNameFld.val()
+        selectedUser.role = $roleFld.val()
+
+        userService.updateUser(selectedUser._id, selectedUser)
+            .then(status => {
+                var index = users.findIndex(user => user._id === selectedUser._id)
+                users[index] = selectedUser
+                renderUsers(users)
+            })
+
+        clearInputs()
+    }
+
+    // helper function for clearing the input form after an action
+    function clearInputs() {
+        $usernameFld.val('')
+        $passwordFld.val('')
+        $firstNameFld.val('')
+        $lastNameFld.val('')
+        $roleFld.val('FACULTY')
+    }
 
 
     function main() {
         $tbody = jQuery('.wbdv-tbody')
-        $removeBtn = $('.wbdv-remove')
+
         $editBtn = $('.wbdv-update')
         $createBtn = $('.wbdv-create')
 
@@ -94,6 +126,8 @@
         $roleFld = $('#roleFld')
 
         $createBtn.click(createUser)
+        $editBtn.click(updateUser)
+
 
         userService
             .findAllUsers()
