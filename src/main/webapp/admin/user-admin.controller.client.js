@@ -67,6 +67,17 @@
 
     }
 
+    function deleteUser(event) {
+        var button = $(event.target)
+        var index = button.attr('id')
+        var id = users[index]._id
+
+        userService.deleteUser(id)
+            .then(function (status) {
+                users.splice(index, 1)
+                renderUsers(users)
+            })
+    }
 
 
 
