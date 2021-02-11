@@ -1,11 +1,9 @@
 (function (){
-
     var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
     var $removeBtn, $editBtn, $createBtn;
     var $userRowTemplate, $tbody;
     var userService = new AdminUserServiceClient();
-
     var users = [
 /*        {username: "alice123", password: "password1", firstName: "Alice", lastName: "Park", role: "Admin" },
         {username: "bob234", password: "password2", firstName: "Bob", lastName: "Costas", role: "Faculty" },
