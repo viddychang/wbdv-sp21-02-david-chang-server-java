@@ -1,4 +1,4 @@
-package com.example.wbdvsp2102davidchangserverjava.controller;
+package com.example.wbdvsp2102davidchangserverjava.controllers;
 
 import java.util.List;
 
