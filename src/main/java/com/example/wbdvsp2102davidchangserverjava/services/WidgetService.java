@@ -26,8 +26,8 @@ public class WidgetService {
      */
   }
 
-  public Widget createWidgetForTopic(String topicId, Widget widget) {
-    widget.setTopicIc(topicId);
+  public Widget createWidget(String topicId, Widget widget) {
+    widget.setTopicId(topicId);
     widget.setId((new Date()).getTime());
     widgets.add(widget);
     return widget;
@@ -39,7 +39,7 @@ public class WidgetService {
   public List<Widget> findWidgetsForTopic(String topicId) {
     List<Widget> ws = new ArrayList<Widget>();
     for(Widget w: widgets) {
-      if(w.getTopicIc().equals(topicId)) {
+      if(w.getTopicId().equals(topicId)) {
         ws.add(w);
       }
     }
