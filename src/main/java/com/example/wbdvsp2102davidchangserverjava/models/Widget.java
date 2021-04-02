@@ -10,9 +10,13 @@ public class Widget {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+<<<<<<< HEAD
 
   private String topicId;
   private String name;
+=======
+  private String topicIc;
+>>>>>>> parent of eb48cd0 (assignment5)
   private String type;
   private Integer widgetOrder;
   private String text;
@@ -117,12 +121,12 @@ public class Widget {
     this.id = id;
   }
 
-  public String getTopicId() {
-    return topicId;
+  public String getTopicIc() {
+    return topicIc;
   }
 
-  public void setTopicId(String topicId) {
-    this.topicId = topicId;
+  public void setTopicIc(String topicIc) {
+    this.topicIc = topicIc;
   }
 
   public String getType() {
@@ -149,6 +153,16 @@ public class Widget {
     this.text = text;
   }
 
+<<<<<<< HEAD
+=======
+  public Widget(Long id, String topicIc, String type, Integer size, String text) {
+    this.id = id;
+    this.topicIc = topicIc;
+    this.type = type;
+    this.size = size;
+    this.text = text;
+  }
+>>>>>>> parent of eb48cd0 (assignment5)
 
 }
 

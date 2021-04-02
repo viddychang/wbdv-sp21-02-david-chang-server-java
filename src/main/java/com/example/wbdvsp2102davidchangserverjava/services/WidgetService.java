@@ -33,12 +33,20 @@ public class WidgetService {
   }
 */
 
+<<<<<<< HEAD
   public Widget createWidget(String topicId, Widget widget) {
     widget.setTopicId(topicId);
     return repository.save(widget);
 //    widget.setId((new Date()).getTime());
 //    widgets.add(widget);
 //    return widget;
+=======
+  public Widget createWidgetForTopic(String topicId, Widget widget) {
+    widget.setTopicIc(topicId);
+    widget.setId((new Date()).getTime());
+    widgets.add(widget);
+    return widget;
+>>>>>>> parent of eb48cd0 (assignment5)
   }
 
   public List<Widget> findAllWidgets() {
@@ -46,6 +54,7 @@ public class WidgetService {
     //    return widgets;
   }
   public List<Widget> findWidgetsForTopic(String topicId) {
+<<<<<<< HEAD
     return repository.findWidgetsForTopic(topicId);
 //    List<Widget> ws = new ArrayList<Widget>();
 //    for(Widget w: widgets) {
@@ -54,6 +63,15 @@ public class WidgetService {
 //      }
 //    }
 //    return ws;
+=======
+    List<Widget> ws = new ArrayList<Widget>();
+    for(Widget w: widgets) {
+      if(w.getTopicIc().equals(topicId)) {
+        ws.add(w);
+      }
+    }
+    return ws;
+>>>>>>> parent of eb48cd0 (assignment5)
   }
 
   public Integer deleteWidget(Long id) {
